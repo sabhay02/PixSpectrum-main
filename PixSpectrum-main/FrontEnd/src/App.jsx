@@ -59,44 +59,37 @@ function LayoutWithSidebar({ children }) {
 }
 
 function MainContent() {
-  const location = useLocation();
-  const isLoginPage = location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/docs';
-
   return (
     <Routes>
-      {isLoginPage ? (
+      {/* Auth pages without sidebar */}
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
+      <Route path="/docs" element={
         <>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/docs" element={
-          <>
           <Navbar />
           <DocumentationPage />
-          </>} />
-  
-        </>
-      ) : (
-        <Route
-          path="*"
-          element={
-            <LayoutWithSidebar>
-              <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route element={<ProtectedRoute />}>
-        <Route path='/' element={<DashBoard />}></Route>
-        <Route path="/filter" element={<Filter />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
-        </Route>
-        <Route path="/documentation" element={<DocumentationPage />}></Route>
-        <Route path="/about" element={<AboutUsPage />}></Route>
-        <Route path="/filters2" element={<TempShow2></TempShow2>}></Route>
-        <Route path="/filters3" element={<TempShow3></TempShow3>}></Route>
-        <Route path='*' element = {<Error404 />} />
-      </Routes>
-            </LayoutWithSidebar>
-          }
-        />
-      )}
+        </>} />
+      
+      {/* Pages with sidebar */}
+      <Route
+        path="*"
+        element={
+          <LayoutWithSidebar>
+            <Routes>
+              <Route element={<ProtectedRoute />}>
+                <Route path='/' element={<DashBoard />}></Route>
+                <Route path="/filter" element={<Filter />}></Route>
+                <Route path="/profile" element={<Profile />}></Route>
+              </Route>
+              <Route path="/documentation" element={<DocumentationPage />}></Route>
+              <Route path="/about" element={<AboutUsPage />}></Route>
+              <Route path="/filters2" element={<TempShow2></TempShow2>}></Route>
+              <Route path="/filters3" element={<TempShow3></TempShow3>}></Route>
+              <Route path='*' element={<Error404 />} />
+            </Routes>
+          </LayoutWithSidebar>
+        }
+      />
     </Routes>
   );
 }
