@@ -18,5 +18,13 @@ export default defineConfig({
   },
   define: {
     'process.env': process.env
-  }
+  },
+  build: {
+    sourcemap: false, // Disable sourcemaps for production to avoid deployment issues
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
 })
