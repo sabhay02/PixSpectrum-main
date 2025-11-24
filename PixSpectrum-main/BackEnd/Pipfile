@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+opencv-python = "*"
+numpy = "*"
+scipy = "*"
+uuid = "*"
+python-multipart = "*"
+pymongo = "*"
+python-dotenv = "*"
+appwrite = "*"
+passlib = "*"
+python-jose = "*"
+bcrypt = "*"
+jose = "*"
+pyjwt = "*"
+pillow = "*"
+cloudinary = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"

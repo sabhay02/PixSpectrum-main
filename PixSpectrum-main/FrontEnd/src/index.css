@@ -1,0 +1,455 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Base body text - Lato (sans-serif) */
+  * {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  body {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+  }
+  
+  /* Headings - Playfair Display (serif) */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+  
+  h2 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  
+  /* Ensure buttons, inputs, and form elements use Lato */
+  button, input, textarea, select, label {
+    font-family: 'Lato', sans-serif;
+  }
+}
+/* @layer base {
+  :root {
+    --radius: 0.5rem
+  ;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%}
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%
+  }
+} */
+@layer utilities {
+
+  .file-upload {
+    @apply  flex cursor-pointer  flex-col items-center justify-center gap-3  text-black rounded-md  border-2 border-black   ;
+  }
+
+  .file-upload_label {
+    @apply flex flex-col justify-center gap-2 text-center text-black;
+  }
+
+
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Hide scrollbar for Firefox */
+.custom-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Optional: Hide scrollbar for Internet Explorer and Edge */
+.custom-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+}
+.jakarta {
+  font-family: "Plus Jakarta Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: bold;
+}
+.loader {
+  border: 16px solid #f3f3f3; 
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Subtle gradient background with pattern */
+.bg-gradient-pattern {
+  background: #F5F2F7;
+  position: relative;
+  min-height: 100%;
+}
+
+.bg-gradient-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.015) 0%, transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.01) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(196, 181, 253, 0.008) 0%, transparent 70%);
+  background-size: 120% 120%, 120% 120%, 150% 150%;
+  background-position: 0% 0%, 100% 100%, 50% 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-gradient-pattern::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(139, 92, 246, 0.003) 2px,
+      rgba(139, 92, 246, 0.003) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(168, 85, 247, 0.003) 2px,
+      rgba(168, 85, 247, 0.003) 4px
+    );
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.bg-gradient-pattern > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Login page background - elegant and subtle */
+.bg-login-gradient {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 25%, #e9d5ff 50%, #ddd6fe 75%, #faf5ff 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+  overflow: hidden;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+/* Auth page background with image editing theme */
+.bg-auth-pattern {
+  position: relative;
+  min-height: 100vh;
+  background: 
+    linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(168, 85, 247, 0.05) 50%, rgba(196, 181, 253, 0.08) 100%),
+    radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.12) 0%, transparent 50%),
+    linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  overflow: hidden;
+}
+
+.bg-auth-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    /* Abstract geometric shapes representing image editing tools */
+    radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(196, 181, 253, 0.04) 0%, transparent 60%),
+    /* Grid pattern suggesting image pixels/grid */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 50px,
+      rgba(139, 92, 246, 0.02) 50px,
+      rgba(139, 92, 246, 0.02) 51px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 50px,
+      rgba(168, 85, 247, 0.02) 50px,
+      rgba(168, 85, 247, 0.02) 51px
+    );
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100px 100px, 100px 100px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.bg-auth-pattern::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    /* Abstract color swatches suggesting image filters */
+    conic-gradient(from 0deg at 20% 30%, rgba(139, 92, 246, 0.05) 0deg, transparent 60deg, rgba(168, 85, 247, 0.05) 120deg, transparent 180deg),
+    conic-gradient(from 180deg at 80% 70%, rgba(196, 181, 253, 0.05) 0deg, transparent 90deg, rgba(139, 92, 246, 0.05) 180deg, transparent 270deg);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bg-auth-pattern > *:not(.iridescence-container) {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-gradient-pattern > *:not(.iridescence-container) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Auth page animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.auth-card {
+  animation: slideInUp 0.6s ease-out;
+  transition: all 0.3s ease;
+}
+
+.auth-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+}
+
+.auth-icon {
+  animation: scaleIn 0.8s ease-out 0.2s both, float 3s ease-in-out infinite 1s;
+}
+
+.auth-title {
+  animation: fadeIn 0.8s ease-out 0.3s both;
+}
+
+.auth-form {
+  animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+.auth-input {
+  transition: all 0.3s ease;
+}
+
+.auth-input:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+  border-color: #8b5cf6;
+}
+
+.auth-button {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.auth-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+}
+
+.auth-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.auth-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #8b5cf6;
+  transition: width 0.3s ease;
+}
+
+.auth-link:hover::after {
+  width: 100%;
+}
+
+/* Floating decorative elements */
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-orb-1 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-orb-2 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.floating-orb-3 {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(196, 181, 253, 0.1) 0%, transparent 70%);
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
