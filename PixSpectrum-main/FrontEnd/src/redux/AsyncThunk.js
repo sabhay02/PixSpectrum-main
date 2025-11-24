@@ -71,7 +71,7 @@ export const signup = createAsyncThunk('auth/signup', async (credentials, thunkA
     }
     const response = await axios.post(`${BACKEND_URL}auth/signup`, credentials);
     console.log(response.data);
-    if (response.data.success === false) {
+    if (response.data.success === 'false') {
       return thunkAPI.rejectWithValue(response.data.message || 'Signup failed');
     }
     return response.data;
